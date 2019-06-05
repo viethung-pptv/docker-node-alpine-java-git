@@ -1,7 +1,7 @@
 FROM node:10.14-alpine
 
-ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
-ENV PATH=$PATH:/home/node/.npm-global/bin # optionally if you want to run npm global bin without specifying path
+ENV NPM_CONFIG_PREFIX /home/node/.npm-global
+ENV PATH $PATH:/home/node/.npm-global/bin # optionally if you want to run npm global bin without specifying path
 
 RUN set -xe \
     && apk add --no-cache bash git openssh \
