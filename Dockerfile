@@ -1,7 +1,6 @@
 FROM node:10.14-alpine
 
 ENV NPM_CONFIG_PREFIX /home/node/.npm-global
-ENV PATH $PATH:/home/node/.npm-global/bin # optionally if you want to run npm global bin without specifying path
 
 RUN set -xe \
     && apk add --no-cache bash git openssh \
@@ -22,7 +21,7 @@ RUN { \
   } > /usr/local/bin/docker-java-home \
   && chmod +x /usr/local/bin/docker-java-home
 ENV JAVA_HOME /usr/lib/jvm/java-1.8-openjdk/jre
-ENV PATH $PATH:/usr/lib/jvm/java-1.8-openjdk/jre/bin:/usr/lib/jvm/java-1.8-openjdk/bin
+ENV PATH $PATH:/usr/lib/jvm/java-1.8-openjdk/jre/bin:/usr/lib/jvm/java-1.8-openjdk/bin:/home/node/.npm-global/bin
 
 ENV JAVA_VERSION 8u212
 ENV JAVA_ALPINE_VERSION 8.212.04-r0
